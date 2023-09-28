@@ -1,4 +1,4 @@
-## 프로젝트 실행
+## 프로젝트 실행방법
 ### typescript를 javascript로 빌드
 ```shell
 npx tsc
@@ -9,6 +9,10 @@ npm run build
 ```
 
 ### Node.js 애플리케이션 시작
+```shell
+node dist/index.js
+```
+or
 ```shell
 pm2 start dist/index.js
 ```
@@ -68,7 +72,6 @@ module.exports = {
 
 
 ## 설치과정
-
 ### 서버에 typescript 설치
 ```shell
 sudo npm i -g typescript
