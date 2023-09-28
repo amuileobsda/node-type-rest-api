@@ -120,9 +120,7 @@ npm i -D @types/express @types/dotenv @types/helmet @types/cors @types/http-stat
 
 ### 참고사이트
 ```
-- https://dev.to/realsteveig/nodejs-and-typescript-tutorial-build-a-rest-api-with-typescript-nodejs-and-a-file-based-storage-system-2l61
-
-- https://github.com/FaztWeb/typescript-mysql-rest
-
-- https://www.youtube.com/watch?v=4clEduk6OQM
+-https://dev.to/realsteveig/nodejs-and-typescript-tutorial-build-a-rest-api-with-typescript-nodejs-and-a-file-based-storage-system-2l61
+-https://github.com/FaztWeb/typescript-mysql-rest
+-https://www.youtube.com/watch?v=4clEduk6OQM
 ```
