@@ -1,20 +1,19 @@
 ## 프로젝트 실행
-#### ts -> js로 빌드
+### typescript를 javascript로 빌드
 ```shell
 npx tsc
 ```
-#### or
+### or
 ```shell
 npm run build
 ```
 
-#### Node.js 애플리케이션 시작
+### Node.js 애플리케이션 시작
 ```shell
 pm2 start dist/index.js
 ```
 
-
-#### PM2 프로세스 관리
+### PM2 프로세스 관리
 ```shell
 애플리케이션 목록 표시: pm2 list
 애플리케이션 상태 확인: pm2 show <app-name>
@@ -22,10 +21,11 @@ pm2 start dist/index.js
 애플리케이션 중지: pm2 stop <app-name>
 애플리케이션 삭제: pm2 delete <app-name>
 로그 확인: pm2 logs
+
 <app-name>은 애플리케이션의 이름 또는 PM2 프로세스 ID일 수 있습니다.
 ```
 
-#### 부팅 시 PM2 자동 실행
+### 부팅 시 PM2 자동 실행
 ```shell
 pm2 startup
 ```
@@ -58,17 +58,17 @@ module.exports = {
 
 ## 설치과정
 
-#### 서버에 typescript 설치
+### 서버에 typescript 설치
 ```shell
 sudo npm i -g typescript
 ```
 
-#### version check
+### version check
 ```shell
 tsc --version
 ```
 
-#### 프로젝트 폴더 들어가서 설치
+### 프로젝트 폴더 들어가서 설치
 ```shell
 npm init -y
 
@@ -92,7 +92,7 @@ npm i mysql2
 
 npm i types/mysql2 -D
 ```
-#### or
+### or
 ```shell
 npm init -y
 
