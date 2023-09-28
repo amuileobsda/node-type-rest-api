@@ -15,14 +15,25 @@ pm2 start dist/index.js
 
 ### PM2 프로세스 관리
 ```shell
-애플리케이션 목록 표시: pm2 list
-애플리케이션 상태 확인: pm2 show <app-name>
-애플리케이션 재시작: pm2 restart <app-name>
-애플리케이션 중지: pm2 stop <app-name>
-애플리케이션 삭제: pm2 delete <app-name>
-로그 확인: pm2 logs
+//애플리케이션 목록 표시
+pm2 list
 
-<app-name>은 애플리케이션의 이름 또는 PM2 프로세스 ID일 수 있습니다.
+//애플리케이션 상태 확인
+pm2 show <app-name>
+
+//애플리케이션 재시작
+pm2 restart <app-name>
+
+//애플리케이션 중지
+pm2 stop <app-name>
+
+//애플리케이션 삭제
+pm2 delete <app-name>
+
+//로그 확인
+pm2 logs
+
+`<app-name>은 애플리케이션의 이름 또는 PM2 프로세스 ID일 수 있습니다.`
 ```
 
 ### 부팅 시 PM2 자동 실행
