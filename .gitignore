@@ -1,0 +1,12 @@
+node_modules
+
+dist
+
+sql
+
+.vscode
+
+src/database.ts
+
+tsconfig.json
+
