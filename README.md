@@ -1,15 +1,15 @@
 ### 프로젝트 실행
 ts -> js로 빌드
-```js
+```npm
 npx tsc
 ```
 or
-```js
+```npm
 npm run build
 ```
 
 Node.js 애플리케이션 시작:
-```linux
+```npm
 pm2 start dist/index.js
 ```
 
