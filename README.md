@@ -1,21 +1,21 @@
 ### 프로젝트 실행
 ts -> js로 빌드
-```node
+```shell
 npx tsc
 ```
 or
-```node
+```shell
 npm run build
 ```
 
 Node.js 애플리케이션 시작:
-```node
+```shell
 pm2 start dist/index.js
 ```
 
 
 ### PM2 프로세스 관리
-```node
+```shell
 애플리케이션 목록 표시: pm2 list
 애플리케이션 상태 확인: pm2 show <app-name>
 애플리케이션 재시작: pm2 restart <app-name>
@@ -26,7 +26,7 @@ pm2 start dist/index.js
 ```
 
 부팅 시 PM2 자동 실행:
-```typescript
+```shell
 pm2 startup
 ```
 
@@ -34,7 +34,7 @@ PM2 설정 파일 사용 (선택 사항):
 PM2 설정을 더 자세하게 관리하려면 JSON 또는 JavaScript 형식의 PM2 설정 파일을 사용할 수 있습니다. 이 파일을 사용하여 애플리케이션 설정, 환경 변수 및 기타 설정을 관리할 수 있습니다.
 
 예를 들어, ecosystem.config.js라는 PM2 설정 파일을 생성하고 애플리케이션 설정을 지정할 수 있습니다:
-```cmd
+```shell
 module.exports = {
   apps: [
     {
@@ -56,17 +56,17 @@ module.exports = {
 ### 설치과정
 
 서버에 typescript 설치
-```node
+```shell
 sudo npm i -g typescript
 ```
 
 version check
-```node
+```shell
 tsc --version
 ```
 
 프로젝트 폴더 들어가서 설치
-```node
+```shell
 npm init -y
 
 npm i typescript -D
@@ -90,7 +90,7 @@ npm i mysql2
 npm i types/mysql2 -D
 ```
 or
-```node
+```shell
 npm init -y
 
 npm i express dotenv helmet cors http-status-codes uuid bcryptjs
