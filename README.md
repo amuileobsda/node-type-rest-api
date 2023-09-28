@@ -15,7 +15,7 @@ pm2 start dist/index.js
 
 
 ### PM2 프로세스 관리
-```cmd
+```typescript
 애플리케이션 목록 표시: pm2 list
 애플리케이션 상태 확인: pm2 show <app-name>
 애플리케이션 재시작: pm2 restart <app-name>
@@ -26,7 +26,7 @@ pm2 start dist/index.js
 ```
 
 부팅 시 PM2 자동 실행:
-```cmd
+```typescript
 pm2 startup
 ```
 
