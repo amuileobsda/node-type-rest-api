@@ -1,4 +1,4 @@
-### 프로젝트 실행
+## 프로젝트 실행
 #### ts -> js로 빌드
 ```shell
 npx tsc
@@ -8,7 +8,7 @@ npx tsc
 npm run build
 ```
 
-Node.js 애플리케이션 시작:
+#### Node.js 애플리케이션 시작
 ```shell
 pm2 start dist/index.js
 ```
@@ -55,7 +55,8 @@ module.exports = {
 이러한 설정 파일을 사용하면 pm2 start ecosystem.config.js와 같은 명령으로 애플리케이션을 시작할 수 있습니다.
 
 
-### 설치과정
+
+## 설치과정
 
 #### 서버에 typescript 설치
 ```shell
