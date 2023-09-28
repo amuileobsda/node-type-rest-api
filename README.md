@@ -1,10 +1,10 @@
 ### 프로젝트 실행
 ts -> js로 빌드
-```linux
+```js
 npx tsc
 ```
 or
-```linux
+```js
 npm run build
 ```
 
@@ -15,7 +15,7 @@ pm2 start dist/index.js
 
 
 ### PM2 프로세스 관리
-```linux
+```js
 애플리케이션 목록 표시: pm2 list
 애플리케이션 상태 확인: pm2 show <app-name>
 애플리케이션 재시작: pm2 restart <app-name>
