@@ -56,17 +56,17 @@ module.exports = {
 ### 설치과정
 
 서버에 typescript 설치
-```cmd
+```node
 sudo npm i -g typescript
 ```
 
 version check
-```cmd
+```node
 tsc --version
 ```
 
 프로젝트 폴더 들어가서 설치
-```cmd
+```node
 npm init -y
 
 npm i typescript -D
@@ -90,7 +90,7 @@ npm i mysql2
 npm i types/mysql2 -D
 ```
 or
-```cmd
+```node
 npm init -y
 
 npm i express dotenv helmet cors http-status-codes uuid bcryptjs
