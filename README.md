@@ -3,7 +3,7 @@
 ```shell
 npx tsc
 ```
-### or
+or
 ```shell
 npm run build
 ```
@@ -33,7 +33,7 @@ pm2 startup
 PM2 설정 파일 사용 (선택 사항):
 PM2 설정을 더 자세하게 관리하려면 JSON 또는 JavaScript 형식의 PM2 설정 파일을 사용할 수 있습니다. 이 파일을 사용하여 애플리케이션 설정, 환경 변수 및 기타 설정을 관리할 수 있습니다.
 
-예를 들어, ecosystem.config.js라는 PM2 설정 파일을 생성하고 애플리케이션 설정을 지정할 수 있습니다
+예를 들어, `ecosystem.config.js` 라는 PM2 설정 파일을 생성하고 애플리케이션 설정을 지정할 수 있습니다
 
 ```shell
 module.exports = {
@@ -52,7 +52,7 @@ module.exports = {
 };
 ```
 
-이러한 설정 파일을 사용하면 pm2 start ecosystem.config.js와 같은 명령으로 애플리케이션을 시작할 수 있습니다.
+이러한 설정 파일을 사용하면 `pm2 start ecosystem.config.js` 와 같은 명령으로 애플리케이션을 시작할 수 있습니다.
 
 
 
@@ -92,7 +92,7 @@ npm i mysql2
 
 npm i types/mysql2 -D
 ```
-### or
+or
 ```shell
 npm init -y
 
