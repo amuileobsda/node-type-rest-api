@@ -8,7 +8,7 @@ import PostRoutes from './routes/post.routes'
 
 // 허용 url
 const local_whitelist: string[] = ["http://localhost:3000", "http://localhost:8000","http://127.0.0.1:3000", "http://127.0.0.1:8000"];
-
+// 허용 url
 const whitelist: string[] = ["https://next-ts.ebosda.com", "http://next-ts.ebosda.com", "next-ts.ebosda.com"]; 
 
 // CORS 미들웨어를 추가하여 원하는 도메인에서만 요청 허용
