@@ -103,6 +103,10 @@ npm i @types/morgan -D
 npm i mysql2
 
 npm i types/mysql2 -D
+
+npm i express cors
+
+npm i --save-dev @types/cors
 ```
 or
 ```shell
