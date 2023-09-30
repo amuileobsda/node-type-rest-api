@@ -1,15 +1,15 @@
 # node.js와 typescript를 이용한 rest api 개발
 
-- 1[프로젝트 실행방법](#프로젝트-실행방법)
+- [프로젝트 실행방법](#프로젝트-실행방법)
 - [typescript를 javascript로 빌드](#typescript를-javascript로-빌드)
 - [Nodejs 애플리케이션 시작](#Nodejs-애플리케이션-시작)
 - [PM2 프로세스 관리](#PM2-프로세스-관리)
 - [PM2 설정 파일 사용](#PM2-설정-파일-사용)
-- 2[설치과정](#설치과정)
+- [설치과정](#설치과정)
 - [서버에 typescript 설치](#서버에-typescript-설치)
 - [version check](#version-check)
 - [프로젝트 폴더 들어가서 설치](#프로젝트-폴더-들어가서-설치)
-- 3[참고사이트](#참고사이트)
+- [참고사이트](#참고사이트)
 
 
 ## 프로젝트 실행방법
