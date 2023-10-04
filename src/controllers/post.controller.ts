@@ -7,12 +7,26 @@ import { Post } from '../interface/Post'
 
 export async function getPosts(req: Request, res: Response): Promise<Response | void> {
     try {
+        // 클라이언트로부터 페이지 번호와 페이지 당 아이템 개수를 받아옴
+        const page: number | undefined = Number(req.query.page);
+        const itemsPerPage: number | undefined = Number(req.query.itemsPerPage);
         const conn = await connect();
-        const posts = await conn.query('SELECT id, PostTitle, CategoryId, SubCategoryId, PostDetails, PostingDate, PostUrl, PostImage, Is_Click FROM tblposts WHERE Is_Active = ? ORDER BY PostingDate DESC', [1]);
-        
-        await conn.end();  // 반환 후 연결 닫기
 
-        return res.json(posts[0]);
+        if (page !== undefined && itemsPerPage !== undefined) {
+
+            // 페이지 번호와 페이지 당 아이템 개수를 이용하여 적절한 데이터를 가져오는 쿼리를 작성
+            const offset = (page - 1) * itemsPerPage;
+            const posts = await conn.query(
+                'SELECT id, PostTitle, CategoryId, SubCategoryId, PostDetails, PostingDate, PostUrl, PostImage, Is_Click FROM tblposts WHERE Is_Active = ? ORDER BY PostingDate DESC LIMIT ?, ?',
+                [1, offset, itemsPerPage]
+            );
+            await conn.end();  // 반환 후 연결 닫기
+
+            return res.json(posts[0]);
+        }else {
+            // 유효하지 않은 값 또는 누락된 값에 대한 에러 처리
+            res.status(404).json({ error: 'Not Found' });
+        }
     }
     catch (e) {
         console.log(e);
