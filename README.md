@@ -1,3 +1,17 @@
+# node.js와 typescript를 이용한 rest api 개발
+
+- [프로젝트 실행방법](#프로젝트-실행방법)
+- [typescript를 javascript로 빌드](#typescript를-javascript로-빌드)
+- [Nodejs 애플리케이션 시작](#Nodejs-애플리케이션-시작)
+- [PM2 프로세스 관리](#PM2-프로세스-관리)
+- [PM2 설정 파일 사용](#PM2-설정-파일-사용)
+- [설치과정](#설치과정)
+- [서버에 typescript 설치](#서버에-typescript-설치)
+- [version check](#version-check)
+- [프로젝트 폴더 들어가서 설치](#프로젝트-폴더-들어가서-설치)
+- [참고사이트](#참고사이트)
+
+
 ## 프로젝트 실행방법
 ### typescript를 javascript로 빌드
 ```shell
@@ -8,7 +22,7 @@ or
 npm run build
 ```
 
-### Node.js 애플리케이션 시작
+### Nodejs 애플리케이션 시작
 ```shell
 node dist/index.js
 ```
@@ -43,7 +57,7 @@ pm2 startup
 //<app-name>은 애플리케이션의 이름 또는 PM2 프로세스 ID일 수 있습니다.
 ```
 
-### PM2 설정 파일 사용 (선택 사항)
+### PM2 설정 파일 사용
 PM2 설정을 더 자세하게 관리하려면 JSON 또는 JavaScript 형식의 PM2 설정 파일을 사용할 수 있습니다. 이 파일을 사용하여 애플리케이션 설정, 환경 변수 및 기타 설정을 관리할 수 있습니다.
 
 예를 들어, `ecosystem.config.js` 라는 PM2 설정 파일을 생성하고 애플리케이션 설정을 지정할 수 있습니다
@@ -120,7 +134,7 @@ npm i -D @types/express @types/dotenv @types/helmet @types/cors @types/http-stat
 ```
 
 
-### 참고사이트
+## 참고사이트
 ```
 - https://dev.to/realsteveig/nodejs-and-typescript-tutorial-build-a-rest-api-with-typescript-nodejs-and-a-file-based-storage-system-2l61
 - https://github.com/FaztWeb/typescript-mysql-rest
