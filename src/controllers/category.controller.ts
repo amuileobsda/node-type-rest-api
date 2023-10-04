@@ -3,20 +3,20 @@ import { Request, Response } from 'express'
 // DB
 import { connect } from '../database'
 // Interfaces
-import { Post } from '../interface/Post'
+import { Category } from '../interface/Category'
 
-export async function getPosts(req: Request, res: Response): Promise<Response | void> {
+export async function getCategories(req: Request, res: Response): Promise<Response | void> {
     try {
         const conn = await connect();
-        const posts = await conn.query('SELECT id, PostTitle, CategoryId, SubCategoryId, PostDetails, PostingDate, PostUrl, PostImage, Is_Click FROM tblposts WHERE Is_Active = ? ORDER BY PostingDate DESC', [1]);
-        
-        await conn.end();  // 반환 후 연결 닫기
+        const categories = await conn.query('SELECT id, CategoryName, Description FROM tblcategory WHERE Is_Active = ? ORDER BY PostingDate DESC', [1]);
 
-        return res.json(posts[0]);
+        await conn.end(); // 반환 후 연결 닫기
+
+        return res.json(categories[0]);
     }
     catch (e) {
         console.log(e);
-        res.status(500).json({ error: 'Internal Server Error' });
+        return res.status(500).json({ error: 'Internal Server Error' });
     }
 }
 
@@ -29,18 +29,19 @@ export async function getPosts(req: Request, res: Response): Promise<Response | 
 //     });
 // }
 
-export async function getPost(req: Request, res: Response) {
-    const id = req.params.postId;
+export async function getCategory(req: Request, res: Response) {
+    const id = req.params.categoryId;
     try {
         const conn = await connect();
-        const posts = await conn.query('SELECT id, PostTitle, CategoryId, SubCategoryId, PostDetails, PostingDate, PostUrl, PostImage, Is_Click FROM tblposts WHERE id = ? AND Is_Active = ? ORDER BY PostingDate DESC', [id, 1]);
-        
+        const categories = await conn.query('SELECT id, CategoryName, Description FROM tblcategory WHERE id = ? AND Is_Active = ? ORDER BY PostingDate DESC', [id, 1]);
+
         await conn.end(); // 반환 후 연결 닫기
 
-        res.json(posts[0]);
-    } catch (e) {
+        res.json(categories[0]);
+    }
+    catch (e) {
         console.log(e);
-        res.status(500).json({ error: 'Internal Server Error' });
+        return res.status(500).json({ error: 'Internal Server Error' });
     }
 }
 
