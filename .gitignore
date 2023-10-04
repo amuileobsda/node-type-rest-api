@@ -6,12 +6,10 @@ dist
 
 # db
 sql
-
 src/database.ts
 
 
 # setting
 .vscode
-
 tsconfig.json
 
