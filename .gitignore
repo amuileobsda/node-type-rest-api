@@ -1,12 +1,17 @@
+# dependencies
 node_modules
 
+# production
 dist
 
+# db
 sql
 
-.vscode
-
 src/database.ts
+
+
+# setting
+.vscode
 
 tsconfig.json
 
