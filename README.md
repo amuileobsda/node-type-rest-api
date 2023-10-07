@@ -14,7 +14,7 @@
 
 ## 프로젝트 실행방법
 ### typescript를 javascript로 빌드
-타입스크립트를 자바스크립트로 dist 폴더 하위 경로에 빌드한다음 해당 폴더의 index.js 파일을 node dist/index.js로 실행시켜준다.
+타입스크립트를 자바스크립트로 dist 폴더 하위 경로에 빌드후 해당 폴더의 index.js 파일을 node dist/index.js로 실행시켜준다.
 ```shell
 npx tsc
 ```
