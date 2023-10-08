@@ -15,9 +15,10 @@ export async function getPosts(req: Request, res: Response): Promise<Response | 
         if (page !== undefined && itemsPerPage !== undefined) {
 
             // 페이지 번호와 페이지 당 아이템 개수를 이용하여 적절한 데이터를 가져오는 쿼리를 작성
+            // 'SELECT id, PostTitle, CategoryId, SubCategoryId, PostDetails, PostingDate, PostUrl, PostImage, Is_Click FROM tblposts WHERE Is_Active = ? ORDER BY PostingDate DESC LIMIT ?, ?',
             const offset = (page - 1) * itemsPerPage;
             const posts = await conn.query(
-                'SELECT id, PostTitle, CategoryId, SubCategoryId, PostDetails, PostingDate, PostUrl, PostImage, Is_Click FROM tblposts WHERE Is_Active = ? ORDER BY PostingDate DESC LIMIT ?, ?',
+                'SELECT tblposts.id as pid, tblposts.PostTitle as PostTitle, tblposts.PostImage as PostImage, tblcategory.CategoryName as category, tblcategory.id as CategoryId, tblsubcategory.Subcategory as subcategory, tblposts.PostDetails as PostDetails, tblposts.PostingDate as PostingDate, tblposts.PostUrl as PostUrl, tblposts.Is_Click as Is_Click FROM tblposts left join tblcategory on tblcategory.id=tblposts.CategoryId left join  tblsubcategory on  tblsubcategory.SubCategoryId=tblposts.SubCategoryId where tblposts.Is_Active=? order by tblposts.id desc  LIMIT ?, ?',
                 [1, offset, itemsPerPage]
             );
             await conn.end();  // 반환 후 연결 닫기

@@ -10,12 +10,12 @@ import CategoryRoutes from './routes/category.routes'
 // 허용 url
 const local_whitelist: string[] = ["http://localhost:3000", "http://localhost:8000","http://127.0.0.1:3000", "http://127.0.0.1:8000"];
 // 허용 url
-const whitelist: string[] = ["https://next-ts.ebosda.com", "http://next-ts.ebosda.com", "next-ts.ebosda.com"]; 
+const whitelist: string[] = ["https://next-ts.ebosda.com", "http://next-ts.ebosda.com", "next-ts.ebosda.com", "http://localhost:8000", "http://127.0.0.1:8000"]; 
 
 // CORS 미들웨어를 추가하여 원하는 도메인에서만 요청 허용
 const corsOptions = {
-    // origin: 'https://next-ts.ebosda.com', // 원하는 도메인 주소로 변경
-    origin: 'http://localhost:3000', // 원하는 도메인 주소로 변경
+    origin: 'https://next-ts.ebosda.com:8000', // 원하는 도메인 주소로 변경
+    // origin: 'http://localhost:8000', // 원하는 도메인 주소로 변경
     optionsSuccessStatus: 200, // 성공 상태 코드
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE', // 허용할 HTTP 메서드
     credentials: true, // 인증 정보를 요청에 포함할지 여부 (예: 쿠키)
@@ -28,10 +28,12 @@ export class App {
         private port?: number | string
     ) {
         this.app = express();
+        this.app.use(express.static('public'));
         this.settings();
         this.middlewares();
-        // this.errorHandling(); // 예외처리 미들웨어 추가
+        this.errorHandling(); // 예외처리 미들웨어 추가
         this.routes();
+        
     }
 
     private settings() {
@@ -55,7 +57,7 @@ export class App {
         this.app.use((req, res, next) => {
           let headers_origin: string | undefined = req.headers.origin as string;
           if (!headers_origin || !whitelist.includes(headers_origin)) {
-            return res.status(403).json({ message: '요청이 허용되지 않았습니다.' });
+            return res.redirect('https://blog.ebosda.com/');
           }
           next();
         });
