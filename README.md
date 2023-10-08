@@ -95,7 +95,7 @@ sudo npm i -g typescript
 tsc --version
 ```
 
-### 프로젝트 폴더 들어가서 설치
+### 프로젝트 폴더 들어가서 필요한 모듈설치
 ```shell
 npm init -y
 
