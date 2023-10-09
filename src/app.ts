@@ -75,10 +75,10 @@ export class App {
     }
 
     private routes() {
-        this.app.use('/', (req, res) => {
-            // 요청을 3000번 포트로 포워딩
-            proxy.web(req, res, { target: 'https://api.ebosda.com:3000' });
-        });
+        // this.app.use('/', (req, res) => {
+        //     // 요청을 3000번 포트로 포워딩
+        //     proxy.web(req, res, { target: 'https://api.ebosda.com:3000' });
+        // });
         this.app.use(IndexRoutes);
         this.app.use('/posts', PostRoutes);
         this.app.use('/categories', CategoryRoutes);
