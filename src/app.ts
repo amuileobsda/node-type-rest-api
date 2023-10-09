@@ -5,6 +5,8 @@ import cors from 'cors'
 import https from 'https';
 import fs from 'fs';
 
+import httpProxy from 'http-proxy';
+
 // Routes
 import IndexRoutes from './routes/index.routes'
 import PostRoutes from './routes/post.routes'
@@ -46,6 +48,8 @@ const ssl_options: https.ServerOptions = {
     cert: fs.readFileSync('/etc/letsencrypt/live/api.ebosda.com/cert.pem')   // 인증서 파일 경로
 };
 
+const proxy = httpProxy.createProxyServer({});
+
 export class App {
     app: Application;
 
@@ -71,6 +75,10 @@ export class App {
     }
 
     private routes() {
+        this.app.use('/', (req, res) => {
+            // 요청을 3000번 포트로 포워딩
+            proxy.web(req, res, { target: 'https://api.ebosda.com:3000' });
+        });
         this.app.use(IndexRoutes);
         this.app.use('/posts', PostRoutes);
         this.app.use('/categories', CategoryRoutes);

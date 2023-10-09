@@ -122,6 +122,11 @@ npm i types/mysql2 -D
 npm i express cors
 
 npm i --save-dev @types/cors
+
+npm install express http-proxy http
+
+npm i --save-dev @types/http-proxy
+
 ```
 or
 ```shell
@@ -132,6 +137,7 @@ npm i express dotenv helmet cors http-status-codes uuid bcryptjs
 npm i -D typescript
 
 npm i -D @types/express @types/dotenv @types/helmet @types/cors @types/http-status-codes @types/uuid @types/bcryptjs
+
 ```
 
 
